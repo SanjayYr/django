@@ -25,4 +25,10 @@ from django.shortcuts import render
 
 def home(request):
 	num = random.randint(0, 1000000)
-	return render(request, "base.html", {"html_var": True, "num": num})
+	some_list = [1, 22, 333, 4444, 55555]
+	context = {
+		"bool_item": True, 
+		"num": num,
+		"some_list": some_list}
+
+	return render(request, "base.html", context)
